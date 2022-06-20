@@ -52,7 +52,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <img src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
+                <img class="img-fluid" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
