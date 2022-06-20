@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<AddressBookMVC.Models.Contact>
-
+@inject AddressBookMVC.Services.Interfaces.IImageService _imageService
 @{
     ViewData["Title"] = "Index";
 }
@@ -12,6 +12,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                Image
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -42,18 +45,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Created)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageData)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageType)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                <img src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
@@ -83,12 +83,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageData)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageType)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
