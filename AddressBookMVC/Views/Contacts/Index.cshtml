@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<AddressBookMVC.Models.Contact>
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,7 +10,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="contactTable">
     <thead>
         <tr>
             <th>
@@ -86,3 +88,11 @@
 }
     </tbody>
 </table>
+@section scripts {
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#contactTable').DataTable();
+        });
+    </script>
+}
