@@ -15,15 +15,20 @@ namespace AddressBookMVC.Models
         public string LastName { get; set; }
         [Required]
         public string Address1 { get; set; }
+
+
         public string Address2 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+
+
         [DataType(DataType.PostalCode)]
         public int Zip { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
         public DateTime Created { get; set; }
 
         [NotMapped]

@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<AddressBookMVC.Models.Contact>
-@inject AddressBookMVC.Services.Interfaces.IImageService _imageService
 @{
     ViewData["Title"] = "Index";
 }
@@ -12,9 +11,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                Image
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -51,9 +47,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                <img class="img-fluid" src="@_imageService.ConvertByteArrayToFile(item.ImageData, item.ImageType)" />
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
