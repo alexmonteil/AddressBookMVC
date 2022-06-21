@@ -63,6 +63,10 @@
                 <input type="file" asp-for="ImageFile" class="form-control" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
+            
+            <input type="hidden" asp-for="ImageData" />
+            <input type="hidden" asp-for="ImageType" /> 
+            
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
