@@ -9,6 +9,7 @@ using AddressBookMVC.Data;
 using AddressBookMVC.Models;
 using AddressBookMVC.Services.Interfaces;
 
+
 namespace AddressBookMVC.Controllers
 {
     public class ContactsController : Controller
@@ -114,7 +115,7 @@ namespace AddressBookMVC.Controllers
                 }
 
                 contact.Created = DateTime.UtcNow;
-
+              
                 try
                 {
                     _context.Update(contact);
@@ -133,6 +134,7 @@ namespace AddressBookMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(contact);
         }
 
