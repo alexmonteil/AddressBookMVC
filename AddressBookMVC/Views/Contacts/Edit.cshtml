@@ -1,5 +1,5 @@
 ﻿@model AddressBookMVC.Models.Contact
-
+@inject AddressBookMVC.Services.Interfaces.IImageService _imageService
 @{
     ViewData["Title"] = "Edit";
 }
@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
-                <input type="file" asp-for="ImageFile" class="form-control" />
+                <input type="file" value="@_imageService.ConvertByteArrayToFile(Model.ImageData, Model.ImageType)" asp-for="ImageFile" class="form-control" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
