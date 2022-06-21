@@ -107,7 +107,7 @@ namespace AddressBookMVC.Controllers
 
             if (ModelState.IsValid)
             {
-                if(contact.ImageFile != null)
+                if (contact.ImageFile != null)
                 {
                     contact.ImageData = await _imageService.ConvertFileToByteArrayAsync(contact.ImageFile);
                     contact.ImageType = contact.ImageFile.ContentType;
