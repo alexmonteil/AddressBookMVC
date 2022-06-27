@@ -65,7 +65,7 @@ namespace AddressBookMVC.Controllers
                     contact.ImageType = contact.ImageFile.ContentType;
                 }
 
-                contact.Created = DateTime.Now;
+                contact.Created = DateTime.UtcNow;
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -112,7 +112,7 @@ namespace AddressBookMVC.Controllers
               
                 try
                 {
-                    contact.Created = DateTime.Now;
+                    contact.Created = DateTime.UtcNow;
                     _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
