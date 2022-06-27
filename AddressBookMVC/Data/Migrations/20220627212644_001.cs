@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AddressBookMVC.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class _001 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,15 +19,15 @@ namespace AddressBookMVC.Data.Migrations
                     FirstName = table.Column<string>(type: "text", nullable: false),
                     LastName = table.Column<string>(type: "text", nullable: false),
                     Address1 = table.Column<string>(type: "text", nullable: false),
-                    Address2 = table.Column<string>(type: "text", nullable: false),
-                    City = table.Column<string>(type: "text", nullable: false),
-                    State = table.Column<string>(type: "text", nullable: false),
+                    Address2 = table.Column<string>(type: "text", nullable: true),
+                    City = table.Column<string>(type: "text", nullable: true),
+                    State = table.Column<string>(type: "text", nullable: true),
                     Zip = table.Column<int>(type: "integer", nullable: false),
-                    Email = table.Column<string>(type: "text", nullable: false),
-                    Phone = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Phone = table.Column<string>(type: "text", nullable: true),
                     Created = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    ImageData = table.Column<byte[]>(type: "bytea", nullable: false),
-                    ImageType = table.Column<string>(type: "text", nullable: false)
+                    ImageData = table.Column<byte[]>(type: "bytea", nullable: true),
+                    ImageType = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -29,6 +29,8 @@ namespace AddressBookMVC.Models
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
+        [Display(Name = "Created Date")]
+        [DataType(DataType.Date)]
         public DateTime Created { get; set; }
 
         [NotMapped]
