@@ -112,7 +112,6 @@ namespace AddressBookMVC.Controllers
               
                 try
                 {
-                    contact.Created = DateTime.UtcNow;
                     _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
